@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SRBC — Sculpting and Reconstructive Bodies Center</title>
+<meta name="description" content="SRBC, Sculpting and Reconstructive Bodies Center. Cirugía de contorno corporal y reconstructiva. La Reina de las Curvas.">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;1,9..144,450&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="vendor/swiper/swiper-bundle.min.css">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<header class="nav" id="nav">
+  <a href="#top" class="nav__brand">
+    <img src="assets/icon.png" alt="" class="nav__mark">
+    <span>SRBC</span>
+  </a>
+  <nav class="nav__links">
+    <a href="#filosofia">Filosofía</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#proceso">Proceso</a>
+    <a href="#equipo">Equipo</a>
+    <a href="#testimonios">Testimonios</a>
+    <a href="#instagram">Instagram</a>
+    <a href="simulador.html">Simulador</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+  <a href="#contacto" class="btn btn--ghost nav__cta">Agenda tu consulta</a>
+  <button class="nav__burger" id="burger" aria-label="Abrir menú">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#filosofia">Filosofía</a>
+  <a href="#servicios">Servicios</a>
+  <a href="#proceso">Proceso</a>
+  <a href="#equipo">Equipo</a>
+  <a href="#testimonios">Testimonios</a>
+  <a href="#instagram">Instagram</a>
+  <a href="simulador.html">Simulador</a>
+  <a href="#contacto">Contacto</a>
+</div>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__watermark" id="heroWatermark" aria-hidden="true">
+      <video class="hero__media hero__media--video" id="heroVideo" autoplay muted playsinline preload="auto">
+        <source src="assets/video/hero-intro.mp4" type="video/mp4">
+      </video>
+      <img class="hero__media hero__media--logo" id="heroLogoFrame" src="assets/video/logo-frame.jpg" alt="">
+      <img class="hero__media hero__media--photo" id="heroPhotoFrame" src="assets/dra/dra-hero.jpg" alt="">
+    </div>
+    <div class="hero__content">
+      <p class="hero__eyebrow">Sculpting &amp; Reconstructive Bodies Center</p>
+      <h1 class="hero__title">El arte de<br>esculpir tu cuerpo.</h1>
+      <p class="hero__sub">Cirugía de contorno corporal y reconstructiva, guiada por precisión anatómica y una visión estética que celebra tus curvas naturales.</p>
+      <div class="hero__actions">
+        <a href="#contacto" class="btn btn--gold">Agenda tu consulta</a>
+        <a href="#servicios" class="btn btn--line">Ver servicios</a>
+      </div>
+      <p class="hero__forms">
+        Formulario de preevaluación:
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfpy3Q2WQ31fbOKQL_Ang1kvFFuwmuh7iSYCo7qlQDqe3Dbtg/viewform" target="_blank" rel="noopener">Español</a>
+        ·
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeNxPkJJ8jvRSx4qJdWztslW3YcWrieEKx0u1B4K1dFPne41w/viewform" target="_blank" rel="noopener">English</a>
+      </p>
+    </div>
+    <svg class="curve-divider" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,64 C240,120 480,0 720,32 C960,64 1200,120 1440,48 L1440,120 L0,120 Z"></path>
+    </svg>
+  </section>
+
+  <!-- FILOSOFIA / LA DRA. -->
+  <section class="philosophy" id="filosofia">
+    <div class="doctor">
+      <div class="doctor__carousel" id="doctorCarousel">
+        <div class="doctor__track" id="doctorTrack">
+          <div class="doctor__slide"><img src="assets/dra/dra-1.jpg" alt="Dra. Noemí De La Cruz Rosa, cirujana plástica de SRBC"></div>
+          <div class="doctor__slide"><img src="assets/dra/dra-2.jpg" alt="Dra. Noemí De La Cruz Rosa"></div>
+          <div class="doctor__slide"><img src="assets/dra/dra-3.jpg" alt="Dra. Noemí De La Cruz Rosa"></div>
+          <div class="doctor__slide"><img src="assets/dra/dra-4.jpg" alt="Dra. Noemí De La Cruz Rosa"></div>
+          <div class="doctor__slide"><img src="assets/dra/dra-5.jpg" alt="Dra. Noemí De La Cruz Rosa"></div>
+          <div class="doctor__slide"><img src="assets/dra/dra-6.jpg" alt="Dra. Noemí De La Cruz Rosa"></div>
+        </div>
+        <button class="doctor__nav doctor__nav--prev" id="doctorPrev" aria-label="Foto anterior">‹</button>
+        <button class="doctor__nav doctor__nav--next" id="doctorNext" aria-label="Foto siguiente">›</button>
+        <div class="doctor__dots" id="doctorDots"></div>
+      </div>
+      <div class="philosophy__text">
+        <p class="doctor__eyebrow">SRBC — by Dra. Noemí De La Cruz Rosa, Cirujana Plástica, Estética y Reconstructiva</p>
+        <h2>No corregimos el cuerpo.<br>Lo interpretamos.</h2>
+        <p>Formada en Cuba, México y Brasil, la Dra. De La Cruz Rosa entiende la cirugía corporal como un oficio de escultor: evalúa cada anatomía de forma individual, prioriza la seguridad por encima de cualquier tendencia estética y acompaña a cada paciente desde la primera consulta hasta la recuperación completa. Su objetivo no es transformar identidades, sino realzar la belleza natural y devolver funcionalidad cuando el cuerpo lo necesita.</p>
+        <a href="https://www.instagram.com/dranoemidelacruz" target="_blank" rel="noopener" class="philosophy__ig">@dranoemidelacruz en Instagram</a>
+
+        <div class="credentials">
+          <div class="credentials__col">
+            <h3>Formación</h3>
+            <ul>
+              <li>Medicina General — Escuela Latinoamericana de Medicina (ELAM), Cuba</li>
+              <li>Residencia en Cirugía Plástica, Estética y Reconstructiva — Universidad Uninga, Maringá, Brasil</li>
+              <li>Armonización Orofacial — ILAO, avalado por Universidad del Oeste Paulista (FACOP)</li>
+              <li>Universidad Autónoma de Nuevo León, México</li>
+            </ul>
+          </div>
+          <div class="credentials__col">
+            <h3>Membresías profesionales</h3>
+            <ul>
+              <li>American College of Surgeons (ACS)</li>
+              <li>International Society of Aesthetic Plastic Surgery (ISAPS)</li>
+              <li>American Society of Cosmetic and Plastic Surgery (ASCPS)</li>
+              <li>Colegio Dominicano de Cirujanos y Colegio Médico Dominicano</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="philosophy__stats">
+      <div class="stat">
+        <span class="stat__num">15+</span>
+        <span class="stat__label">años de experiencia quirúrgica</span>
+      </div>
+      <div class="stat">
+        <span class="stat__num">2,000+</span>
+        <span class="stat__label">procedimientos realizados</span>
+      </div>
+      <div class="stat">
+        <span class="stat__num">98%</span>
+        <span class="stat__label">pacientes satisfechas</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="services" id="servicios">
+    <div class="section-head">
+      <h2>Servicios</h2>
+      <p>Cada procedimiento se planifica según la anatomía, las proporciones y los objetivos reales de cada paciente.</p>
+    </div>
+
+    <div class="service-group">
+      <div class="service-group__head">
+        <h3>Contorno Corporal</h3>
+        <p>El cuerpo se trabaja como una sola composición — abdomen, cintura, espalda, brazos y piernas en proporción entre sí, no como zonas aisladas.</p>
+      </div>
+      <div class="services__grid">
+        <article class="service-card">
+          <h3>Lipoescultura 360°</h3>
+          <p>Lipo de alta definición en abdomen, cintura, espalda y flancos, creando transiciones naturales entre zonas.</p>
+        </article>
+        <article class="service-card">
+          <h3>Abdominoplastia estructural</h3>
+          <p>Retiro de exceso de piel, corrección de diástasis abdominal y definición de cintura en un mismo procedimiento.</p>
+        </article>
+        <article class="service-card">
+          <h3>Diseño de glúteos (BBL)</h3>
+          <p>Proyección y forma glútea mediante transferencia de grasa autóloga, con resultados naturales y proporcionales.</p>
+        </article>
+        <article class="service-card">
+          <h3>Lipo de brazos y espalda</h3>
+          <p>Eliminación de grasa localizada en brazos, axilas y espalda para una silueta más armoniosa en la parte superior del cuerpo.</p>
+        </article>
+      </div>
+    </div>
+
+    <div class="service-group">
+      <div class="service-group__head">
+        <h3>Arquitectura Mamaria</h3>
+        <p>Cada procedimiento se planifica según estructura torácica, calidad de piel, volumen y proporción con el resto del cuerpo.</p>
+      </div>
+      <div class="services__grid">
+        <article class="service-card">
+          <h3>Aumento mamario</h3>
+          <p>Selección de implante o técnica según anatomía, grosor de tejidos y expectativa estética.</p>
+        </article>
+        <article class="service-card">
+          <h3>Levantamiento mamario</h3>
+          <p>Reposiciona el busto para devolverle una forma más natural, firme y simétrica.</p>
+        </article>
+        <article class="service-card">
+          <h3>Aumento + levantamiento</h3>
+          <p>Combina volumen y reposicionamiento en un solo procedimiento, para casos con pérdida de firmeza y volumen.</p>
+        </article>
+        <article class="service-card">
+          <h3>Reducción mamaria</h3>
+          <p>Alivio funcional junto con proporción corporal y un resultado natural.</p>
+        </article>
+      </div>
+    </div>
+
+    <div class="service-group">
+      <div class="service-group__head">
+        <h3>Armonización Facial</h3>
+        <p>Un rostro se equilibra, no se transforma: se evalúan tercios faciales, simetría y perfil para definir solo lo que aporta armonía — nunca de más.</p>
+      </div>
+      <div class="services__grid">
+        <article class="service-card">
+          <h3>Evaluación facial integral</h3>
+          <p>Análisis de tercios faciales, simetría, perfil y calidad de piel como base de un plan hecho a medida.</p>
+        </article>
+        <article class="service-card">
+          <h3>Ácido hialurónico</h3>
+          <p>Labios, pómulos, mentón, línea mandibular y surcos faciales, con resultados naturales y reversibles.</p>
+        </article>
+        <article class="service-card">
+          <h3>Toxina botulínica</h3>
+          <p>Frente, entrecejo, patas de gallo y elevación sutil de cejas, cuidando la expresividad del rostro.</p>
+        </article>
+        <article class="service-card">
+          <h3>Bioestimulación y calidad de piel</h3>
+          <p>Estimuladores de colágeno y skinboosters para mejorar hidratación, elasticidad y textura.</p>
+        </article>
+        <article class="service-card">
+          <h3>Hilos tensores</h3>
+          <p>Estimulan la producción de colágeno y mejoran la flacidez en pacientes seleccionados.</p>
+        </article>
+        <article class="service-card">
+          <h3>Tratamientos de piel</h3>
+          <p>Láser y tecnologías basadas en energía para cicatrices, textura y luminosidad.</p>
+        </article>
+        <article class="service-card">
+          <h3>Cirugía facial estructural</h3>
+          <p>Rinoplastia, mentoplastia, blefaroplastia, lifting facial y bichectomía en casos seleccionados.</p>
+        </article>
+      </div>
+      <p class="service-group__quote">"La armonización facial no busca cambiar tu rostro, sino resaltar su belleza, equilibrar sus proporciones y preservar tu identidad."</p>
+    </div>
+
+    <div class="service-group">
+      <div class="service-group__head">
+        <h3>Procedimientos Masculinos</h3>
+        <p>La cirugía masculina respeta la anatomía atlética natural del paciente, sin feminizar la silueta ni exagerar la marcación.</p>
+      </div>
+      <div class="services__grid">
+        <article class="service-card">
+          <h3>Contorno de alta definición</h3>
+          <p>Lipo de abdomen, flancos y espalda para lograr armonía, simetría y una apariencia atlética.</p>
+        </article>
+        <article class="service-card">
+          <h3>Diseño de contorno pectoral</h3>
+          <p>Define la región pectoral masculina para una apariencia más proporcionada y firme.</p>
+        </article>
+        <article class="service-card">
+          <h3>Ginecomastia</h3>
+          <p>Tratamiento integral de la glándula mamaria masculina con técnica combinada.</p>
+        </article>
+      </div>
+    </div>
+
+    <div class="service-group">
+      <div class="service-group__head">
+        <h3>Cirugía Reconstructiva</h3>
+        <p>Reconstrucción funcional y estética para pacientes que han pasado por cambios significativos en su cuerpo.</p>
+      </div>
+      <div class="services__grid">
+        <article class="service-card">
+          <h3>Reconstrucción post-bariátrica</h3>
+          <p>Corrección del exceso de piel y tejido tras una pérdida de peso masiva, restaurando contorno y firmeza.</p>
+        </article>
+        <article class="service-card">
+          <h3>Reconstrucción post-mastectomía</h3>
+          <p>Reconstrucción mamaria con enfoque funcional y estético, adaptada a cada caso.</p>
+        </article>
+        <article class="service-card">
+          <h3>Corrección de secuelas</h3>
+          <p>Revisión y mejora de resultados de cirugías previas, propias o realizadas en otro centro.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIMULADOR IA (teaser) -->
+  <section class="sim-teaser">
+    <div class="sim-teaser__inner">
+      <div>
+        <h2>Visualiza tu posible cambio</h2>
+        <p>Prueba nuestro simulador con inteligencia artificial y explora, de forma orientativa, cómo podrías verte.</p>
+      </div>
+      <a href="simulador.html" class="btn btn--gold">Probar el simulador</a>
+    </div>
+  </section>
+
+  <!-- PROCESO -->
+  <section class="process" id="proceso">
+    <div class="section-head section-head--light">
+      <h2>Tu proceso, paso a paso</h2>
+      <p>Un camino claro desde la primera cita hasta la recuperación completa.</p>
+    </div>
+    <ol class="process__list">
+      <li class="process__item">
+        <span class="process__num">01</span>
+        <h3>Consulta inicial</h3>
+        <p>Evaluación anatómica y conversación abierta sobre tus objetivos y expectativas.</p>
+      </li>
+      <li class="process__item">
+        <span class="process__num">02</span>
+        <h3>Plan personalizado</h3>
+        <p>Diseño quirúrgico a medida, con explicación detallada de técnica y resultados esperados.</p>
+      </li>
+      <li class="process__item">
+        <span class="process__num">03</span>
+        <h3>Procedimiento</h3>
+        <p>Cirugía realizada en quirófano certificado, bajo protocolos de seguridad estrictos.</p>
+      </li>
+      <li class="process__item">
+        <span class="process__num">04</span>
+        <h3>Recuperación y seguimiento</h3>
+        <p>Acompañamiento post-operatorio cercano hasta ver tu resultado final.</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section class="testimonials" id="testimonios">
+    <div class="section-head">
+      <h2>Voces de nuestras pacientes</h2>
+    </div>
+    <div class="testimonials__grid">
+      <blockquote class="quote">
+        <p>“Desde la consulta hasta la recuperación, sentí que estaban esculpiendo un plan hecho solo para mí.”</p>
+        <cite>Paciente de Lipoescultura 360°</cite>
+      </blockquote>
+      <blockquote class="quote">
+        <p>“El resultado se ve natural, como una versión más definida de mi propio cuerpo.”</p>
+        <cite>Paciente de BBL</cite>
+      </blockquote>
+      <blockquote class="quote">
+        <p>“El acompañamiento después de la cirugía fue lo que más tranquilidad me dio.”</p>
+        <cite>Paciente de Abdominoplastia</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- EQUIPO / COORDINADORAS -->
+  <section class="team" id="equipo">
+    <div class="section-head">
+      <h2>Tu coordinadora, cerca de ti</h2>
+      <p>SRBC recibe pacientes de toda la región y del extranjero. Escribe directamente a la coordinadora de tu zona para resolver dudas y organizar tu viaje.</p>
+    </div>
+    <div class="team__grid">
+      <a class="team-card team-card--photo" href="https://wa.link/s36nqw" target="_blank" rel="noopener">
+        <img src="assets/team/team-lisset.jpg" alt="Lisset Rodríguez" class="team-card__photo">
+        <span class="team-card__region">República Dominicana</span>
+        <h3>Lisset Rodríguez</h3>
+        <span class="team-card__link">Escribir por WhatsApp</span>
+      </a>
+      <a class="team-card team-card--photo" href="https://wa.link/1f66n4" target="_blank" rel="noopener">
+        <img src="assets/team/team-nairobi.jpg" alt="Nairobi De La Cruz Rosa" class="team-card__photo">
+        <span class="team-card__region">República Dominicana</span>
+        <h3>Nairobi De La Cruz Rosa</h3>
+        <span class="team-card__link">Escribir por WhatsApp</span>
+      </a>
+      <a class="team-card team-card--photo" href="https://wa.link/1m9gff" target="_blank" rel="noopener">
+        <img src="assets/team/team-digna.jpg" alt="Digna Lantigua García" class="team-card__photo">
+        <span class="team-card__region">República Dominicana y Centro América</span>
+        <h3>Digna Lantigua García</h3>
+        <span class="team-card__link">Escribir por WhatsApp</span>
+      </a>
+      <a class="team-card team-card--photo" href="https://wa.link/1m9gff" target="_blank" rel="noopener">
+        <img src="assets/team/team-alondra.jpg" alt="Alondra P. Rodríguez Caesar, M.D." class="team-card__photo">
+        <span class="team-card__region">Puerto Rico</span>
+        <h3>Alondra P. Rodríguez Caesar, M.D.</h3>
+        <span class="team-card__link">Escribir por WhatsApp</span>
+      </a>
+      <a class="team-card team-card--photo" href="https://wa.link/tkn4r2" target="_blank" rel="noopener">
+        <img src="assets/team/team-judith.jpg" alt="Judith Ramos" class="team-card__photo">
+        <span class="team-card__region">TX · LA · MS · AL · GA · AR · OK · NM · AZ · KS · CA, USA</span>
+        <h3>Judith Ramos</h3>
+        <span class="team-card__link">Escribir por WhatsApp</span>
+      </a>
+      <a class="team-card team-card--photo" href="https://wa.link/68tjw4" target="_blank" rel="noopener">
+        <img src="assets/team/team-yuret.jpg" alt="Yuret Castro" class="team-card__photo">
+        <span class="team-card__region">Florida, USA</span>
+        <h3>Yuret Castro</h3>
+        <span class="team-card__link">Escribir por WhatsApp</span>
+      </a>
+      <a class="team-card team-card--photo" href="https://wa.link/5i8nii" target="_blank" rel="noopener">
+        <img src="assets/team/team-maritza.jpg" alt="Maritza Rodríguez, M.D." class="team-card__photo">
+        <span class="team-card__region">Rhode Island y New York, USA</span>
+        <h3>Maritza Rodríguez, M.D.</h3>
+        <span class="team-card__link">Escribir por WhatsApp</span>
+      </a>
+      <a class="team-card team-card--photo" href="https://wa.link/81so6y" target="_blank" rel="noopener">
+        <img src="assets/team/team-keisha.jpg" alt="Keisha Beato Miliano" class="team-card__photo">
+        <span class="team-card__region">Massachusetts, USA</span>
+        <h3>Keisha Beato Miliano</h3>
+        <span class="team-card__link">Escribir por WhatsApp</span>
+      </a>
+      <a class="team-card team-card--photo" href="https://wa.link/gv9gao" target="_blank" rel="noopener">
+        <img src="assets/team/team-sherley.jpg" alt="Sherley Phanor" class="team-card__photo">
+        <span class="team-card__region">Francia · Bélgica · Canadá · Alemania · Rusia</span>
+        <h3>Sherley Phanor</h3>
+        <span class="team-card__link">Escribir por WhatsApp</span>
+      </a>
+      <a class="team-card team-card--accent team-card--photo" href="https://wa.link/4ilnt2" target="_blank" rel="noopener">
+        <img src="assets/team/team-gilda.jpg" alt="Gilda Castro" class="team-card__photo">
+        <span class="team-card__region">Coordinación general de agenda</span>
+        <h3>Gilda Castro</h3>
+        <span class="team-card__link">Escribir por WhatsApp</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- INSTAGRAM -->
+  <section class="instagram-feed" id="instagram">
+    <div class="section-head section-head--light">
+      <h2>Síguenos en Instagram</h2>
+      <p>Antes, después y el día a día de SRBC. Toca cualquier video para verlo completo en Instagram.</p>
+    </div>
+    <div class="ig-gallery">
+      <p class="ig-gallery__label">Mamoplastia & Mastopexia</p>
+      <div class="swiper igSwiper">
+        <div class="swiper-wrapper">
+          <a class="swiper-slide swiper-slide--video" href="https://www.instagram.com/reel/DdUuZNpyc6Q/" target="_blank" rel="noopener">
+            <span class="swiper-slide__video-thumb">
+              <svg class="swiper-slide__play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+              <span class="swiper-slide__video-label">Ver reel en Instagram</span>
+            </span>
+          </a>
+          <a class="swiper-slide" href="https://www.instagram.com/p/DaYKl8BkX0l/" target="_blank" rel="noopener">
+            <img src="assets/instagram/post-1.jpg" alt="Resultado quirúrgico de mamoplastia y mastopexia — SRBC">
+          </a>
+          <a class="swiper-slide" href="https://www.instagram.com/p/DaYKl8BkX0l/" target="_blank" rel="noopener">
+            <img src="assets/instagram/post-2.jpg" alt="Resultado postoperatorio de mamoplastia y mastopexia — SRBC">
+          </a>
+          <a class="swiper-slide" href="https://www.instagram.com/p/DaYKl8BkX0l/" target="_blank" rel="noopener">
+            <img src="assets/instagram/post-3.jpg" alt="Detalle de resultado de mamoplastia y mastopexia — SRBC">
+          </a>
+          <a class="swiper-slide" href="https://www.instagram.com/p/DaYKl8BkX0l/" target="_blank" rel="noopener">
+            <img src="assets/instagram/post-4.jpg" alt="Resultado de mamoplastia y mastopexia en quirófano — SRBC">
+          </a>
+          <a class="swiper-slide" href="https://www.instagram.com/p/DaYKl8BkX0l/" target="_blank" rel="noopener">
+            <img src="assets/instagram/post-5.jpg" alt="Dra. Noemí De La Cruz Rosa — Cada detalle tiene una explicación científica">
+          </a>
+        </div>
+      </div>
+      <p class="ig-gallery__hint">Desliza y toca cualquier foto o video para verlo completo en Instagram</p>
+    </div>
+
+    <a href="https://www.instagram.com/dranoemidelacruz" target="_blank" rel="noopener" class="btn btn--gold instagram-feed__cta">Ver más en Instagram</a>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="contact" id="contacto">
+    <svg class="curve-divider curve-divider--top" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0,48 C240,120 480,0 720,32 C960,64 1200,0 1440,64 L1440,0 L0,0 Z"></path>
+    </svg>
+    <div class="contact__inner">
+      <div class="contact__info">
+        <h2>Hablemos de tu proceso</h2>
+        <p>Completa el formulario de preevaluación o escribe directamente a la coordinadora de tu región para agendar tu consulta.</p>
+        <ul class="contact__list">
+          <li><span>Agenda general</span><a href="https://wa.link/4ilnt2" target="_blank" rel="noopener">WhatsApp — Gilda Castro</a></li>
+          <li><span>Correo profesional</span><a href="mailto:dradelacruzrosa2023@gmail.com">dradelacruzrosa2023@gmail.com</a></li>
+          <li><span>Preevaluación</span>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfpy3Q2WQ31fbOKQL_Ang1kvFFuwmuh7iSYCo7qlQDqe3Dbtg/viewform" target="_blank" rel="noopener">Formulario en español</a>
+          </li>
+          <li><span>Pre-evaluation</span>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeNxPkJJ8jvRSx4qJdWztslW3YcWrieEKx0u1B4K1dFPne41w/viewform" target="_blank" rel="noopener">English form</a>
+          </li>
+          <li><span>Ubicación</span>Santo Domingo, República Dominicana</li>
+        </ul>
+        <div class="contact__social">
+          <a href="https://www.instagram.com/dranoemidelacruz" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
+          <a href="#equipo" aria-label="Coordinadoras">Ver coordinadoras por región</a>
+        </div>
+      </div>
+      <form class="contact__form" onsubmit="return false;">
+        <label>Nombre
+          <input type="text" name="nombre" required>
+        </label>
+        <label>Correo
+          <input type="email" name="correo" required>
+        </label>
+        <label>Procedimiento de interés
+          <select name="procedimiento">
+            <option>Lipoescultura 360°</option>
+            <option>BBL — Brazilian Butt Lift</option>
+            <option>Abdominoplastia</option>
+            <option>Mamoplastia</option>
+            <option>Cirugía reconstructiva</option>
+            <option>Otro</option>
+          </select>
+        </label>
+        <label>Mensaje
+          <textarea name="mensaje" rows="4"></textarea>
+        </label>
+        <button type="submit" class="btn btn--gold">Enviar mensaje</button>
+        <p class="contact__note">Este formulario es una vista previa — conéctalo a tu proveedor de correo o CRM antes de publicar.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <img src="assets/icon.png" alt="" class="footer__mark">
+  <p>SRBC — Sculpting and Reconstructive Bodies Center</p>
+  <p class="footer__by">by Dra. Noemí De La Cruz Rosa — Cirujana Plástica, Estética y Reconstructiva</p>
+  <p class="footer__tagline">“The Queen of Curves”</p>
+  <p class="footer__copy">© <span id="year"></span> SRBC. Todos los derechos reservados.</p>
+</footer>
+
+<script src="vendor/swiper/swiper-bundle.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

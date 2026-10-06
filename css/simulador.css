@@ -1,0 +1,411 @@
+/* Asegura que [hidden] siempre gane, sin importar la especificidad
+   de otras reglas (p. ej. .sim-progress { display:flex }). */
+[hidden] { display: none !important; }
+
+/* ============ Simulador — layout base ============ */
+.sim-main {
+  background: var(--black);
+  color: var(--ivory);
+  min-height: 100vh;
+  padding: 8rem clamp(1.25rem, 4vw, 3.5rem) 5rem;
+}
+.sim-shell {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.sim-screen { display: none; }
+.sim-screen.is-active {
+  display: block;
+  animation: simFadeIn 0.5s ease both;
+}
+@keyframes simFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.sim-eyebrow {
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  color: var(--gold-light);
+  margin-bottom: 1rem;
+}
+.sim-title {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  line-height: 1.1;
+  margin-bottom: 0.8rem;
+}
+.sim-subtitle {
+  color: var(--ivory-dim);
+  font-size: 1.05rem;
+  max-width: 520px;
+  margin-bottom: 2.2rem;
+}
+.sim-landing { text-align: center; }
+.sim-landing .sim-subtitle { margin-left: auto; margin-right: auto; }
+
+/* ============ Progreso ============ */
+.sim-progress {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+.sim-progress__step {
+  flex: 1;
+  height: 3px;
+  border-radius: 3px;
+  background: rgba(198,161,91,0.2);
+  overflow: hidden;
+}
+.sim-progress__step::after {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: var(--gold);
+  transition: width 0.4s ease;
+}
+.sim-progress__step.is-done::after,
+.sim-progress__step.is-active::after { width: 100%; }
+
+/* ============ Aviso ============ */
+.sim-notice {
+  background: var(--charcoal);
+  border: 1px solid rgba(198,161,91,0.25);
+  border-radius: 10px;
+  padding: 1.8rem 2rem;
+  margin-bottom: 1.8rem;
+}
+.sim-notice h2 {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  color: var(--gold-light);
+  margin-bottom: 0.8rem;
+}
+.sim-notice p {
+  color: var(--ivory-dim);
+  font-size: 0.95rem;
+  margin-bottom: 0.9rem;
+}
+.sim-notice p:last-child { margin-bottom: 0; }
+
+.sim-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  margin: 1.6rem 0 2rem;
+  cursor: pointer;
+  font-size: 0.92rem;
+  color: var(--ivory);
+}
+.sim-check input {
+  margin-top: 0.2rem;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--gold);
+  flex-shrink: 0;
+}
+
+/* ============ Botones del simulador ============ */
+.sim-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.sim-landing .sim-actions { justify-content: center; }
+.btn:disabled,
+.btn.is-disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.sim-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--ivory-dim);
+  margin-bottom: 1.6rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: var(--sans);
+}
+.sim-back:hover { color: var(--gold-light); }
+
+/* ============ Subida de foto ============ */
+.sim-dropzone {
+  border: 1.5px dashed rgba(198,161,91,0.4);
+  border-radius: 12px;
+  padding: 3rem 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.25s ease, background 0.25s ease;
+  margin-bottom: 1rem;
+}
+.sim-dropzone:hover,
+.sim-dropzone.is-dragover {
+  border-color: var(--gold);
+  background: rgba(198,161,91,0.06);
+}
+.sim-dropzone__icon {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 1rem;
+  fill: none;
+  stroke: var(--gold-light);
+  stroke-width: 1.4;
+}
+.sim-dropzone__text {
+  font-size: 1rem;
+  color: var(--ivory);
+  margin-bottom: 0.4rem;
+}
+.sim-dropzone__hint {
+  font-size: 0.82rem;
+  color: #9a8c78;
+}
+.sim-dropzone input[type="file"] { display: none; }
+
+.sim-preview {
+  display: none;
+  margin-bottom: 1.6rem;
+}
+.sim-preview.is-active { display: block; }
+.sim-preview img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+  border-radius: 10px;
+  background: var(--charcoal);
+}
+.sim-preview__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.7rem;
+  font-size: 0.85rem;
+  color: var(--ivory-dim);
+}
+.sim-preview__remove {
+  background: none;
+  border: none;
+  color: var(--gold-light);
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-family: var(--sans);
+}
+.sim-error {
+  display: none;
+  color: #e2a0a0;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+.sim-error.is-active { display: block; }
+
+/* ============ Selección de procedimiento ============ */
+.sim-category { margin-bottom: 2rem; }
+.sim-category__label {
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 0.9rem;
+}
+.sim-proc-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.9rem;
+}
+.sim-proc-card {
+  text-align: left;
+  background: var(--charcoal);
+  border: 1px solid rgba(198,161,91,0.2);
+  border-radius: 8px;
+  padding: 1.1rem 1.2rem;
+  cursor: pointer;
+  color: var(--ivory);
+  font-family: var(--sans);
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+.sim-proc-card h3 {
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0 0 0.3em;
+  color: var(--ivory);
+}
+.sim-proc-card p {
+  font-size: 0.8rem;
+  color: var(--ivory-dim);
+  margin: 0;
+}
+.sim-proc-card:hover { border-color: rgba(198,161,91,0.5); }
+.sim-proc-card.is-selected {
+  border-color: var(--gold);
+  background: rgba(198,161,91,0.1);
+}
+.sim-proc-card.is-selected h3 { color: var(--gold-light); }
+
+/* ============ Procesando ============ */
+.sim-processing {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+.sim-spinner {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 2rem;
+  border-radius: 50%;
+  border: 2px solid rgba(198,161,91,0.2);
+  border-top-color: var(--gold);
+  animation: simSpin 1s linear infinite;
+}
+@keyframes simSpin { to { transform: rotate(360deg); } }
+.sim-processing__title {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  margin-bottom: 0.7rem;
+}
+.sim-processing__text {
+  color: var(--ivory-dim);
+  font-size: 0.92rem;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+/* ============ Resultado / comparador ============ */
+.sim-result__label {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--gold-light);
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+}
+.sim-compare {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  max-height: 560px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--charcoal);
+  user-select: none;
+  touch-action: pan-y;
+}
+.sim-compare img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: var(--charcoal);
+  pointer-events: none;
+}
+.sim-compare__after {
+  clip-path: inset(0 0 0 50%);
+}
+/* En modo demo no existe un resultado real de IA: se aplica un tono muy
+   sutil solo para que el comparador sea útil al probar la interfaz. */
+.sim-compare__after.sim-demo-filter {
+  filter: saturate(1.08) brightness(1.03) contrast(1.02);
+}
+.sim-compare__tag {
+  position: absolute;
+  top: 12px;
+  z-index: 3;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(14,12,10,0.65);
+  color: var(--ivory);
+  padding: 0.3em 0.7em;
+  border-radius: 4px;
+  pointer-events: none;
+}
+.sim-compare__tag--before { left: 12px; }
+.sim-compare__tag--after { right: 12px; }
+.sim-compare__handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: var(--gold-light);
+  z-index: 4;
+  pointer-events: none;
+}
+.sim-compare__handle::after {
+  content: '↔';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+.sim-compare__range {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: ew-resize;
+  z-index: 5;
+}
+.sim-compare__watermark {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+  color: rgba(246,241,231,0.75);
+  background: rgba(14,12,10,0.55);
+  padding: 0.3em 0.8em;
+  border-radius: 999px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.sim-result-note {
+  background: var(--charcoal);
+  border-left: 3px solid var(--gold);
+  padding: 1.2rem 1.5rem;
+  margin: 1.8rem 0;
+  font-size: 0.88rem;
+  color: var(--ivory-dim);
+}
+.sim-result-note strong { color: var(--ivory); }
+
+.sim-cta {
+  text-align: center;
+  margin-top: 2.4rem;
+}
+.sim-cta p {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  margin-bottom: 1.2rem;
+}
+.sim-cta .sim-actions { justify-content: center; }
+
+.sim-limit-note {
+  text-align: center;
+  color: #9a8c78;
+  font-size: 0.8rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 560px) {
+  .sim-proc-grid { grid-template-columns: 1fr; }
+  .sim-main { padding-top: 7rem; }
+}

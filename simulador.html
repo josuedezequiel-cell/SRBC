@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulador visual con IA — SRBC</title>
+<meta name="description" content="Simulador visual orientativo creado con inteligencia artificial. SRBC — Sculpting and Reconstructive Bodies Center.">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;1,9..144,450&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/simulador.css">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<header class="nav" id="nav">
+  <a href="index.html#top" class="nav__brand">
+    <img src="assets/icon.png" alt="" class="nav__mark">
+    <span>SRBC</span>
+  </a>
+  <nav class="nav__links">
+    <a href="index.html#filosofia">Filosofía</a>
+    <a href="index.html#servicios">Servicios</a>
+    <a href="index.html#proceso">Proceso</a>
+    <a href="index.html#equipo">Equipo</a>
+    <a href="index.html#testimonios">Testimonios</a>
+    <a href="index.html#instagram">Instagram</a>
+    <a href="simulador.html" class="is-active-link">Simulador</a>
+    <a href="index.html#contacto">Contacto</a>
+  </nav>
+  <a href="index.html#contacto" class="btn btn--ghost nav__cta">Agenda tu consulta</a>
+  <button class="nav__burger" id="burger" aria-label="Abrir menú">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html#filosofia">Filosofía</a>
+  <a href="index.html#servicios">Servicios</a>
+  <a href="index.html#proceso">Proceso</a>
+  <a href="index.html#equipo">Equipo</a>
+  <a href="index.html#testimonios">Testimonios</a>
+  <a href="index.html#instagram">Instagram</a>
+  <a href="simulador.html">Simulador</a>
+  <a href="index.html#contacto">Contacto</a>
+</div>
+
+<main class="sim-main">
+  <div class="sim-shell">
+
+    <div class="sim-progress" id="simProgress" hidden>
+      <div class="sim-progress__step" data-progress="aviso"></div>
+      <div class="sim-progress__step" data-progress="foto"></div>
+      <div class="sim-progress__step" data-progress="procedimiento"></div>
+      <div class="sim-progress__step" data-progress="resultado"></div>
+    </div>
+
+    <!-- PANTALLA: LANDING -->
+    <section class="sim-screen sim-landing is-active" data-screen="landing">
+      <p class="sim-eyebrow">SRBC — Simulador visual con IA</p>
+      <h1 class="sim-title">Visualiza tu posible cambio</h1>
+      <p class="sim-subtitle">Una simulación visual creada con inteligencia artificial para ayudarte a imaginar diferentes posibilidades.</p>
+      <div class="sim-actions">
+        <button class="btn btn--gold" id="btnStart">Comenzar simulación</button>
+      </div>
+    </section>
+
+    <!-- PANTALLA: AVISO -->
+    <section class="sim-screen" data-screen="aviso">
+      <button class="sim-back" data-back="landing">← Volver</button>
+      <h1 class="sim-title" style="font-size:1.8rem;">Antes de comenzar</h1>
+      <div class="sim-notice">
+        <h2>Importante</h2>
+        <p>Esta herramienta genera una simulación visual mediante inteligencia artificial. La imagen resultante es únicamente ilustrativa y no representa un resultado médico garantizado.</p>
+        <p>Los resultados reales pueden variar según las características anatómicas, condiciones individuales, técnica quirúrgica y valoración profesional de cada paciente.</p>
+        <p>La simulación no sustituye una consulta ni una evaluación médica profesional.</p>
+      </div>
+      <label class="sim-check">
+        <input type="checkbox" id="chkAviso">
+        <span>He leído y comprendo que esta es únicamente una simulación visual.</span>
+      </label>
+      <div class="sim-actions">
+        <button class="btn btn--gold is-disabled" id="btnAvisoContinuar" disabled>Continuar</button>
+      </div>
+    </section>
+
+    <!-- PANTALLA: SUBIR FOTOGRAFÍA -->
+    <section class="sim-screen" data-screen="foto">
+      <button class="sim-back" data-back="aviso">← Volver</button>
+      <h1 class="sim-title" style="font-size:1.8rem;">Sube tu fotografía</h1>
+      <p class="sim-subtitle">Utiliza una fotografía reciente, bien iluminada y con la zona que deseas visualizar claramente visible. Tu foto no se sube a ningún servidor: este simulador corre en modo demostración, directamente en tu navegador.</p>
+
+      <p class="sim-error" id="simFotoError"></p>
+
+      <div class="sim-dropzone" id="simDropzone">
+        <svg class="sim-dropzone__icon" viewBox="0 0 24 24"><path d="M12 16V4M12 4l-4 4M12 4l4 4" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 16v3a2 2 0 002 2h12a2 2 0 002-2v-3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <p class="sim-dropzone__text">Arrastra tu foto aquí o toca para elegirla</p>
+        <p class="sim-dropzone__hint">JPG, PNG o WEBP · máx. <span id="simMaxSize"></span> MB</p>
+        <input type="file" id="simFileInput" accept="image/jpeg,image/jpg,image/png,image/webp">
+      </div>
+
+      <div class="sim-preview" id="simPreview">
+        <img id="simPreviewImg" alt="Vista previa de tu fotografía">
+        <div class="sim-preview__meta">
+          <span id="simFileName"></span>
+          <button class="sim-preview__remove" id="simRemovePhoto">Quitar foto</button>
+        </div>
+      </div>
+
+      <div class="sim-actions">
+        <button class="btn btn--gold is-disabled" id="btnFotoContinuar" disabled>Continuar</button>
+      </div>
+    </section>
+
+    <!-- PANTALLA: SELECCIONAR PROCEDIMIENTO -->
+    <section class="sim-screen" data-screen="procedimiento">
+      <button class="sim-back" data-back="foto">← Volver</button>
+      <h1 class="sim-title" style="font-size:1.8rem;">Selecciona un procedimiento</h1>
+      <p class="sim-subtitle">Elige el procedimiento que te gustaría visualizar.</p>
+
+      <div id="simProcedureCategories"></div>
+
+      <div class="sim-actions">
+        <button class="btn btn--gold is-disabled" id="btnProcedimientoContinuar" disabled>Generar simulación</button>
+      </div>
+      <p class="sim-limit-note" id="simLimitNote"></p>
+    </section>
+
+    <!-- PANTALLA: PROCESANDO -->
+    <section class="sim-screen" data-screen="procesando">
+      <div class="sim-processing">
+        <div class="sim-spinner"></div>
+        <p class="sim-processing__title">Preparando tu simulación…</p>
+        <p class="sim-processing__text">La inteligencia artificial está preparando una representación visual basada en tu fotografía y el procedimiento seleccionado.</p>
+      </div>
+    </section>
+
+    <!-- PANTALLA: RESULTADO -->
+    <section class="sim-screen" data-screen="resultado">
+      <p class="sim-result__label">Tu simulación</p>
+
+      <div class="sim-compare" id="simCompare">
+        <img id="simImgBefore" class="sim-compare__before" alt="Fotografía original">
+        <img id="simImgAfter" class="sim-compare__after" alt="Simulación visual del procedimiento seleccionado">
+        <span class="sim-compare__tag sim-compare__tag--before">Antes</span>
+        <span class="sim-compare__tag sim-compare__tag--after">Simulación</span>
+        <div class="sim-compare__handle" id="simHandle"></div>
+        <span class="sim-compare__watermark">Simulación IA — no es un resultado médico</span>
+        <input type="range" class="sim-compare__range" id="simRange" min="0" max="100" value="50" aria-label="Comparar antes y simulación">
+      </div>
+
+      <div class="sim-result-note">
+        <strong>Recuerda:</strong> esta imagen es una simulación generada mediante inteligencia artificial con fines exclusivamente ilustrativos. No representa necesariamente el resultado que se obtendría mediante un procedimiento real. La valoración, indicación y resultado final deben ser determinados por la Dra. Noemí De La Cruz Rosa después de una evaluación profesional.
+      </div>
+
+      <div class="sim-cta">
+        <p>¿Quieres saber qué opciones pueden ser adecuadas para ti?</p>
+        <div class="sim-actions">
+          <a class="btn btn--gold" id="ctaEvaluacion" href="#" target="_blank" rel="noopener">Solicitar evaluación</a>
+          <a class="btn btn--line" id="ctaWhatsapp" href="#" target="_blank" rel="noopener">Hablar por WhatsApp</a>
+        </div>
+        <p class="sim-limit-note"><button class="sim-back" id="btnNuevaSimulacion" style="margin:1.4rem auto 0;">↻ Probar otro procedimiento</button></p>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <img src="assets/icon.png" alt="" class="footer__mark">
+  <p>SRBC — Sculpting and Reconstructive Bodies Center</p>
+  <p class="footer__by">by Dra. Noemí De La Cruz Rosa — Cirujana Plástica, Estética y Reconstructiva</p>
+  <p class="footer__tagline">"The Queen of Curves"</p>
+  <p class="footer__copy">© <span id="year"></span> SRBC. Todos los derechos reservados.</p>
+</footer>
+
+<script src="js/simulador-config.js"></script>
+<script src="js/simulador-service.js"></script>
+<script src="js/script.js"></script>
+<script src="js/simulador-app.js"></script>
+</body>
+</html>

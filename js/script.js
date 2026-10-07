@@ -1,22 +1,17 @@
 // Año dinámico en el footer
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Hero: secuencia video → logo → foto de la Dra. (con fundidos suaves)
+// Hero: secuencia video → foto de la Dra. (fundido suave)
 (function () {
   const watermark = document.getElementById('heroWatermark');
   const video = document.getElementById('heroVideo');
   if (!watermark || !video) return;
 
-  const LOGO_HOLD_MS = 1600; // cuánto tiempo se queda el logo en pantalla
-
-  function showLogoThenPhoto() {
-    watermark.classList.add('is-logo');
-    window.setTimeout(() => {
-      watermark.classList.add('is-photo');
-    }, LOGO_HOLD_MS);
+  function showPhoto() {
+    watermark.classList.add('is-photo');
   }
 
-  video.addEventListener('ended', showLogoThenPhoto);
+  video.addEventListener('ended', showPhoto);
 
   // Si el video falla al cargar, mostrar la foto directamente
   video.addEventListener('error', () => watermark.classList.add('no-video'));

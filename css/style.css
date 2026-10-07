@@ -178,24 +178,16 @@ p { margin: 0 0 1em; }
   object-position: center 18%;
   filter: brightness(0.8) saturate(1.05);
 }
-.hero__media--logo {
-  object-fit: contain;
-  background: var(--black);
-  filter: brightness(0.96);
-}
 .hero__media--photo {
   object-position: 78% 18%;
   filter: grayscale(1) contrast(1.08) brightness(0.85);
   mix-blend-mode: luminosity;
 }
 /* Estados orquestados por JS (ver script.js) */
-.hero__watermark.is-logo .hero__media--video { opacity: 0; }
-.hero__watermark.is-logo .hero__media--logo { opacity: 1; }
-.hero__watermark.is-photo .hero__media--logo { opacity: 0; }
+.hero__watermark.is-photo .hero__media--video { opacity: 0; }
 .hero__watermark.is-photo .hero__media--photo { opacity: 0.4; }
 /* Si el video no puede reproducirse (o no hay JS), mostrar la foto de una vez */
-.hero__watermark.no-video .hero__media--video,
-.hero__watermark.no-video .hero__media--logo { opacity: 0; }
+.hero__watermark.no-video .hero__media--video { opacity: 0; }
 .hero__watermark.no-video .hero__media--photo { opacity: 0.4; }
 .hero__watermark::before {
   content: "";
